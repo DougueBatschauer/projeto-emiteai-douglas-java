@@ -30,10 +30,5 @@ public class ApiConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(auditInterceptor);
     }
-
-    @Bean
-    public Queue queuePessoaFisica() {
-        return new Queue("pessoa-fisica-relatorio-queue", true);
-    }
 }
 
