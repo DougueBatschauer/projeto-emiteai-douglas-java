@@ -1,0 +1,27 @@
+services:
+  api:
+    image: batschauer97/projeto-emiteai-backend
+    ports:
+      - "8080:8080"
+      - "11102:5432"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:16
+    container_name: dbpostgres
+    restart: always
+    environment:
+      POSTGRES_USER: dbsilva
+      POSTGRES_PASSWORD: batschauer
+      POSTGRES_DB: cadastropessoas
+    ports:
+      - "5432:5432"
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./dados:/var/lib/rabbitmq/
