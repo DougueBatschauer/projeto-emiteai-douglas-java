@@ -13,11 +13,7 @@ Certifique-se de ter instalado:
    ```sh
    cd backend
    ```
-2. Construa a imagem Docker do backend:
-   ```sh
-   docker build -t backend-app .
-   ```
-3. Suba o ambiente com Docker Compose:
+2. Suba o ambiente com Docker Compose:
    ```sh
    docker-compose up -d --build
    ```
